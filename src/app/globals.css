@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-primary-orange: #FF6500;
+    --color-primary-orange-hover: #E05500;
+    --color-primary-orange-light: #FFF5EE;
+    --color-primary-orange-border: #FFD8C2;
+    --color-hydro-navy: #0B192C;
+    --color-hydro-slate: #1E293B;
+    --color-hero-ice: #EBF5F8;
+    --color-card-peach: #FFF6F0;
+    --color-border-subtle: #E2E8F0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  }
+
+  html[lang="am"] {
+    font-family: var(--font-ethiopic), var(--font-jakarta), system-ui, sans-serif;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-hydro-slate);
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Glassmorphism Navigation */
+.glass-header {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Micro-animations */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 101, 0, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(255, 101, 0, 0); }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6500;
 }
