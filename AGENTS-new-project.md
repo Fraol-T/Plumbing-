@@ -4,7 +4,6 @@
 
 _(fill in before running)_
 
-- **Reference image:** ![](C:/Users/Fnotay/AppData/Roaming/marktext/images/2026-07-27-19-09-52-image.png)
 - **What it's for:**  Website for plumber
 - **Type:** website
 
